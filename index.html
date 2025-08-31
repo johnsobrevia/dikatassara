@@ -25,6 +25,17 @@
         .fade-in-effect {
             animation: fadeIn 0.4s ease-in-out;
         }
+        /* Estilos para el efecto de aparición de secciones al hacer scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
@@ -74,7 +85,7 @@
         </section>
 
         <!-- Servicios Section -->
-        <section id="servicios" class="py-20 bg-gray-800">
+        <section id="servicios" class="py-20 bg-gray-800 fade-in-section">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">Nuestros Servicios</h2>
                 
@@ -141,7 +152,7 @@
         </section>
         
         <!-- Productos Section -->
-        <section id="productos" class="py-20 bg-gray-900">
+        <section id="productos" class="py-20 bg-gray-900 fade-in-section">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">Nuestros Productos</h2>
 
@@ -241,7 +252,7 @@
         </section>
 
         <!-- Clientes Section -->
-        <section id="clientes" class="py-20 bg-gray-800">
+        <section id="clientes" class="py-20 bg-gray-800 fade-in-section">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">Clientes que Confían en Nosotros</h2>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
@@ -270,7 +281,7 @@
         </section>
 
         <!-- Contacto Section -->
-        <section id="contacto" class="py-20 bg-gray-900">
+        <section id="contacto" class="py-20 bg-gray-900 fade-in-section">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">Contáctenos</h2>
                 <div class="flex flex-wrap -mx-4">
@@ -400,8 +411,28 @@
         setupTabs('.service-tab-button', '.service-tab-panel');
         setupTabs('.product-tab-button', '.product-tab-panel');
 
+        // Script para efecto de aparición de secciones al hacer scroll
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observerOptions = {
+            root: null, // relativo al viewport
+            rootMargin: '0px',
+            threshold: 0.1 // se activa cuando el 10% de la sección es visible
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Para que la animación ocurra solo una vez
+                }
+            });
+        }, observerOptions);
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
     </script>
 </body>
 </html>
+
 
 
