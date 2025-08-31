@@ -1,0 +1,2 @@
+Este archivo es solo para asegurar que la carpeta src se suba al repositorio.
+Puedes eliminarlo cuando agregues tus propios archivos.
