@@ -110,9 +110,10 @@
                 <h2 class="text-3xl font-bold text-center mb-12">Nuestros Servicios</h2>
                 
                 <!-- Tab Buttons for Services -->
-                <div class="flex flex-wrap justify-center border-b border-gray-300 dark:border-gray-700 mb-8">
-                    <button class="service-tab-button py-2 px-6 block focus:outline-none text-cyan-600 dark:text-cyan-400 border-b-2 font-medium border-cyan-600 dark:border-cyan-400" data-target="predictivo">Mantenimiento Predictivo</button>
+                <div class="flex flex-wrap justify-center border-b border-gray-300 dark:border-gray-700 mb-8 relative">
+                    <button class="service-tab-button py-2 px-6 block focus:outline-none text-cyan-600 dark:text-cyan-400 font-medium" data-target="predictivo">Mantenimiento Predictivo</button>
                     <button class="service-tab-button py-2 px-6 block focus:outline-none text-gray-500 font-medium hover:text-cyan-600 dark:hover:text-cyan-400" data-target="reparacion">Reparación y Montaje</button>
+                    <div class="service-indicator absolute bottom-0 left-0 h-0.5 bg-cyan-600 dark:bg-cyan-400 transition-all duration-300"></div>
                 </div>
 
                 <!-- Tab Content for Services -->
@@ -121,7 +122,7 @@
                     <div id="predictivo" class="service-tab-panel">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                             <!-- Servicio 4: Termografía -->
-                            <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                                <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg h-64">
                                 <img src="src/servicio-termografia.jpg" alt="Termografía" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/334155/e2e8f0?text=Termografía'; this.onerror=null;">
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold mb-2 text-cyan-600 dark:text-cyan-400">Termografía</h3>
@@ -129,7 +130,7 @@
                                 </div>
                             </div>
                             <!-- Servicio 5: Análisis de Vibraciones -->
-                            <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                                <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg h-64">
                                 <img src="src/servicio-analisis-vibraciones.jpg" alt="Análisis de Vibraciones" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/334155/e2e8f0?text=Análisis+Vibraciones'; this.onerror=null;">
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold mb-2 text-cyan-600 dark:text-cyan-400">Análisis de Vibraciones</h3>
@@ -142,7 +143,7 @@
                     <div id="reparacion" class="service-tab-panel hidden">
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <!-- Servicio 1: Equipos Rotativos -->
-                            <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                                <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg h-64">
                                 <img src="src/servicio-equipos-rotativos.jpg" alt="Equipos Rotativos" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/334155/e2e8f0?text=Equipos+Rotativos'; this.onerror=null;">
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold mb-2 text-cyan-600 dark:text-cyan-400">Equipos Rotativos</h3>
@@ -150,7 +151,7 @@
                                 </div>
                             </div>
                             <!-- Servicio 2: Alineamiento Láser -->
-                            <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                                <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg h-64">
                                 <img src="src/servicio-alineamiento-laser.jpg" alt="Alineamiento Laser" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/334155/e2e8f0?text=Alineamiento+Láser'; this.onerror=null;">
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold mb-2 text-cyan-600 dark:text-cyan-400">Alineamiento Láser</h3>
@@ -158,7 +159,7 @@
                                 </div>
                             </div>
                             <!-- Servicio 3: Motores Eléctricos -->
-                            <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                                <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg h-64">
                                 <img src="src/servicio-motores-electricos.jpg" alt="Motores Eléctricos" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/334155/e2e8f0?text=Motores+Eléctricos'; this.onerror=null;">
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold mb-2 text-cyan-600 dark:text-cyan-400">Reparación de Motores Eléctricos</h3>
@@ -177,10 +178,11 @@
                 <h2 class="text-3xl font-bold text-center mb-12">Nuestros Productos</h2>
 
                 <!-- Tab Buttons -->
-                <div class="flex flex-wrap justify-center border-b border-gray-300 dark:border-gray-700 mb-8">
-                    <button class="product-tab-button py-2 px-6 block focus:outline-none text-cyan-600 dark:text-cyan-400 border-b-2 font-medium border-cyan-600 dark:border-cyan-400" data-target="equipos">Equipos de Medición</button>
+                <div class="flex flex-wrap justify-center border-b border-gray-300 dark:border-gray-700 mb-8 relative">
+                    <button class="product-tab-button py-2 px-6 block focus:outline-none text-cyan-600 dark:text-cyan-400 font-medium" data-target="equipos">Equipos de Medición</button>
                     <button class="product-tab-button py-2 px-6 block focus:outline-none text-gray-500 font-medium hover:text-cyan-600 dark:hover:text-cyan-400" data-target="quimicos">Productos Químicos</button>
                     <button class="product-tab-button py-2 px-6 block focus:outline-none text-gray-500 font-medium hover:text-cyan-600 dark:hover:text-cyan-400" data-target="suministros">Suministros Industriales</button>
+                    <div class="product-indicator absolute bottom-0 left-0 h-0.5 bg-cyan-600 dark:bg-cyan-400 transition-all duration-300"></div>
                 </div>
 
                 <!-- Tab Content -->
@@ -398,20 +400,39 @@
         function setupTabs(buttonClass, panelClass) {
             const tabButtons = document.querySelectorAll(buttonClass);
             const tabPanels = document.querySelectorAll(panelClass);
-
+            let indicator;
+            
+            // Identificar el indicador correcto basado en la clase del botón
+            if (buttonClass === '.service-tab-button') {
+                indicator = document.querySelector('.service-indicator');
+            } else if (buttonClass === '.product-tab-button') {
+                indicator = document.querySelector('.product-indicator');
+            }
+            
+            // Posicionar el indicador inicialmente en la primera pestaña activa
+            if (indicator && tabButtons.length > 0) {
+                const activeTab = document.querySelector(`${buttonClass}.text-cyan-600`) || tabButtons[0];
+                positionIndicator(activeTab, indicator);
+            }
+            
             tabButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const targetPanelId = button.dataset.target;
-
+                    
+                    // Actualizar las clases de los botones
                     tabButtons.forEach(btn => {
                         const isTarget = btn.dataset.target === targetPanelId;
                         btn.classList.toggle('text-cyan-600', isTarget);
                         btn.classList.toggle('dark:text-cyan-400', isTarget);
-                        btn.classList.toggle('border-cyan-600', isTarget);
-                        btn.classList.toggle('dark:border-cyan-400', isTarget);
                         btn.classList.toggle('text-gray-500', !isTarget);
                     });
-
+                    
+                    // Mover el indicador bajo la pestaña activa
+                    if (indicator) {
+                        positionIndicator(button, indicator);
+                    }
+                    
+                    // Mostrar el panel correspondiente
                     tabPanels.forEach(panel => {
                         if (panel.id === targetPanelId) {
                             panel.classList.remove('hidden');
@@ -424,10 +445,32 @@
                 });
             });
         }
+        
+        // Función para posicionar el indicador bajo la pestaña activa
+        function positionIndicator(activeTab, indicator) {
+            indicator.style.width = `${activeTab.offsetWidth}px`;
+            indicator.style.left = `${activeTab.offsetLeft}px`;
+        }
 
         // Inicializar pestañas para Servicios y Productos
         setupTabs('.service-tab-button', '.service-tab-panel');
         setupTabs('.product-tab-button', '.product-tab-panel');
+        
+        // Reposicionar los indicadores cuando la ventana cambia de tamaño
+        window.addEventListener('resize', function() {
+            const serviceActiveTab = document.querySelector('.service-tab-button.text-cyan-600');
+            const productActiveTab = document.querySelector('.product-tab-button.text-cyan-600');
+            const serviceIndicator = document.querySelector('.service-indicator');
+            const productIndicator = document.querySelector('.product-indicator');
+            
+            if (serviceActiveTab && serviceIndicator) {
+                positionIndicator(serviceActiveTab, serviceIndicator);
+            }
+            
+            if (productActiveTab && productIndicator) {
+                positionIndicator(productActiveTab, productIndicator);
+            }
+        });
 
         // Script para efecto de aparición de secciones al hacer scroll
         const sections = document.querySelectorAll('.fade-in-section');
