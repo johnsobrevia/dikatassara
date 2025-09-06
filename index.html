@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth scroll-pt-24">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,11 +27,7 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        .hero-bg {
-            background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('src/hero-background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
+        /* Ya no se necesita la clase hero-bg ya que ahora usamos una estructura con imagen y overlay */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -58,8 +54,9 @@
     <header id="header" class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 transition-all duration-300">
         <div class="container mx-auto flex justify-between items-center p-4">
             <a href="#" class="flex items-center space-x-2">
-                <!-- El logo de la empresa -->
-                <img src="src/logo.png" alt="Logo Dika Tassara" class="h-10 w-auto" onerror="this.src='https://placehold.co/200x50/111827/e5e7eb?text=DIKA+TASSARA'; this.onerror=null;">
+                <!-- El logo de la empresa - Versiones para modo claro y oscuro -->
+                <img src="src/logodika.png" alt="Logo Dika Tassara" class="h-16 w-auto block dark:hidden" onerror="this.src='https://placehold.co/200x50/111827/e5e7eb?text=DIKA+TASSARA'; this.onerror=null;">
+                <img src="src/LOGODIKAOSC.png" alt="Logo Dika Tassara" class="h-16 w-auto hidden dark:block" onerror="this.src='https://placehold.co/200x50/e5e7eb/111827?text=DIKA+TASSARA'; this.onerror=null;">
             </a>
             <div class="flex items-center">
                 <nav class="hidden md:flex space-x-8 mr-4">
@@ -92,8 +89,12 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="inicio" class="hero-bg text-white text-center py-20 md:py-32">
-            <div class="container mx-auto px-4">
+        <section id="inicio" class="text-white text-center py-20 md:py-32 pt-28 md:pt-36 relative">
+            <div class="absolute inset-0 z-0">
+                <img src="src/FONDODIKKA.jpg" alt="Fondo Dika Tassara" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Mantenimiento y Montaje Industrial de Excelencia</h1>
                 <p class="text-lg md:text-xl max-w-3xl mx-auto">
                     Somos una empresa de especialistas enfocados a la excelencia, comprometiendo cada servicio de manera responsable ante el medio ambiente y nuestros clientes.
@@ -105,7 +106,7 @@
         </section>
 
         <!-- Servicios Section -->
-        <section id="servicios" class="py-20 bg-gray-100 dark:bg-gray-800 fade-in-section">
+        <section id="servicios" class="py-20 pt-28 md:pt-32 bg-gray-100 dark:bg-gray-800 fade-in-section">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">Nuestros Servicios</h2>
                 
@@ -173,7 +174,7 @@
         </section>
         
         <!-- Productos Section -->
-        <section id="productos" class="py-20 bg-white dark:bg-gray-900 fade-in-section">
+        <section id="productos" class="py-20 pt-28 md:pt-32 bg-white dark:bg-gray-900 fade-in-section">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">Nuestros Productos</h2>
 
@@ -189,13 +190,67 @@
                 <div>
                     <!-- Tab Panel 1: Equipos -->
                     <div id="equipos" class="product-tab-panel">
-                        <div class="grid grid-cols-1 gap-8 max-w-md mx-auto">
-                            <!-- Producto: Cámara Termográfica -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
+                            <!-- Servicio con Fixturlaser Evo -->
                             <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
-                                <img src="src/producto-camara-termografica.jpg" alt="Cámara Termográfica XC300" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/334155/e2e8f0?text=Cámara+XC300'; this.onerror=null;">
+                                <img src="src/servicio-fixturlaser-evo.jpg" alt="Servicio con Fixturlaser Evo" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/334155/e2e8f0?text=Fixturlaser+Evo'; this.onerror=null;">
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold mb-2 text-cyan-600 dark:text-cyan-400">Cámara Termográfica XC300</h3>
-                                    <p class="text-gray-600 dark:text-gray-400">Ideal para inspecciones industriales y mantenimiento predictivo.</p>
+                                    <h3 class="text-xl font-semibold mb-2 text-cyan-600 dark:text-cyan-400">Servicio con Fixturlaser Evo</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Ofrecemos servicio de alineación de ejes láser con Fixturlaser Evo. Aumentamos la vida útil de tu maquinaria industrial garantizando máxima precisión.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto: SKF TKSA 41 -->
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                                <img src="src/producto-skf-tksa41.jpg" alt="SKF TKSA 41" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/334155/e2e8f0?text=SKF+TKSA+41'; this.onerror=null;">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2 text-cyan-600 dark:text-cyan-400">SKF TKSA 41</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Servicio experto de alineación de ejes con tecnología SKF TKSA 41. Aseguramos la confiabilidad operativa de tus activos con reportes certificados.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto: DSP Logger MX300 -->
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                                <img src="src/producto-dsp-logger.jpg" alt="DSP Logger MX300" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/334155/e2e8f0?text=DSP+Logger+MX300'; this.onerror=null;">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2 text-cyan-600 dark:text-cyan-400">DSP Logger MX300</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Detectamos fallas a tiempo con nuestro análisis de vibraciones con DSP Logger MX300. Mantenimiento predictivo para la continuidad de tu producción.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto: Cámara Termográfica Fluke Ti32 -->
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                                <img src="src/producto-fluke-ti32.jpg" alt="Cámara Termográfica Fluke Ti32" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/334155/e2e8f0?text=Fluke+Ti32'; this.onerror=null;">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2 text-cyan-600 dark:text-cyan-400">Cámara Termográfica Fluke Ti32</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Realizamos inspecciones termográficas con Fluke Ti32 para un mantenimiento seguro. Identificamos puntos críticos en tus sistemas antes de que fallen</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto: Easy-Laser XT660 -->
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                                <img src="src/producto-easy-laser.jpg" alt="Easy-Laser XT660" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/334155/e2e8f0?text=Easy-Laser+XT660'; this.onerror=null;">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2 text-cyan-600 dark:text-cyan-400">Easy-Laser XT660</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Servicio de alineación láser para maquinaria de gran tamaño con Easy-Laser XT660. Precisión y eficiencia para optimizar tus equipos más robustos.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto: MSA Altair 5x -->
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                                <img src="src/producto-msa-altair.jpg" alt="MSA Altair 5x" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/334155/e2e8f0?text=MSA+Altair+5x'; this.onerror=null;">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2 text-cyan-600 dark:text-cyan-400">MSA Altair 5x</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Garantizamos la seguridad en espacios confinados con monitoreo de gases MSA Altair 5x. Protegemos a tu personal durante paradas de planta y mantenciones.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto: Fixturlaser GO Pro -->
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                                <img src="src/producto-fixturlaser.jpg" alt="Fixturlaser GO Pro" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/334155/e2e8f0?text=Fixturlaser+GO+Pro'; this.onerror=null;">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2 text-cyan-600 dark:text-cyan-400">Fixturlaser GO Pro</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Alineación de ejes rápida y eficiente con Fixturlaser GO Pro. Optimizamos el rendimiento de tus equipos y reducimos el consumo energético.  </p>
                                 </div>
                             </div>
                         </div>
@@ -273,7 +328,7 @@
         </section>
 
         <!-- Clientes Section -->
-        <section id="clientes" class="py-20 bg-gray-100 dark:bg-gray-800 fade-in-section">
+        <section id="clientes" class="py-20 pt-28 md:pt-32 bg-gray-100 dark:bg-gray-800 fade-in-section">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">Clientes que Confían en Nosotros</h2>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
@@ -302,7 +357,7 @@
         </section>
 
         <!-- Contacto Section -->
-        <section id="contacto" class="py-20 bg-white dark:bg-gray-900 fade-in-section">
+        <section id="contacto" class="py-20 pt-28 md:pt-32 bg-white dark:bg-gray-900 fade-in-section">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">Contáctenos</h2>
                 <div class="flex flex-wrap -mx-4">
